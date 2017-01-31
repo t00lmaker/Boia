@@ -9,24 +9,25 @@ class Usuario  < ActiveRecord::Base
 end
 class Colaborador  < ActiveRecord::Base
    self.table_name = "colaborador"
-   belongs_to :usuario
+   belongs_to :usuario, :foreign_key => 'idUsuario', :primary_key => 'idUsuario'
 end
 class Opcao < ActiveRecord::Base
   self.table_name = "opcao"
 end
 class Cardapio < ActiveRecord::Base
    self.table_name = "cardapio"
-   belongs_to :colaborador
 end
 class Pedido < ActiveRecord::Base
    self.table_name = "pedido"
-   belongs_to :colaborador
+   belongs_to :colaborador, :foreign_key => 'idColaborador', :primary_key => 'id'
 end
 
 get '/' do
-  users = Usuario.all
-  for u in users
-    puts u.nome
+  pedidos = Pedido.all
+  for p in pedidos
+    if(p.colaborador)
+      puts p.colaborador.usuario.nome
+    end
   end
   erb :index
 end
