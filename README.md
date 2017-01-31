@@ -1,0 +1,1 @@
+Essa aplicação será a salvação para mentes esquecidas.
