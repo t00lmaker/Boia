@@ -1,12 +1,15 @@
 require "sinatra/activerecord"
 
-class AgendamentoMigrate < ActiveRecord::Migration[5.0]
+#set :database, {adapter: "mysql2", database: "jbroca", user: "root", password: "root"}
+
+class Agendamentos < ActiveRecord::Migration[5.0]
   def change
-    create_table :agendamentos do |t|
+    create_table :agendamento do |t|
       t.boolean :ativo
       t.integer :tipo
-      t.long    :idColaborador
+      t.integer :idColaborador
       t.date    :data
+      t.timestamps
     end
   end
 end
