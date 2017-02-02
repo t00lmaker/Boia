@@ -58,11 +58,11 @@ get '/login' do
   erb :index
 end
 
-
 post '/login' do
-  user = Usuario.find_by_login(params[:usuario])
-  if(user)
-    if(user.logar(params[:senha]))
+  @user = Usuario.find_by_login(params[:usuario])
+  if(@user)
+    if(@user.logar(params[:senha]))
+      session[:id] = @user.id
       redirect :agenda
     end
   end
@@ -70,6 +70,21 @@ post '/login' do
   erb :index
 end
 
+get '/about' do
+ erb :about
+end
+
+get '/logout' do
+ session.clear
+ redirect :login
+end
+
 get '/agenda' do
- erb :agenda
+ if(session[:id])
+   @user = Usuario.find(session[:id])
+   erb :agenda
+ else
+    @message = "Realize login para realizar o a agendamento."
+   redirect :login
+ end
 end
