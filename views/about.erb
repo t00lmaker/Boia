@@ -7,91 +7,83 @@
     <meta name="description" content="Boia, um auxiliar do Jbroca.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <title>Boia - Agenda</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,500,400,300,100&amp;subset=latin,latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700,500,400,300,200,100&amp;subset=latin,latin-ext" >
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-pink.min.css" />
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-yellow.min.css" />
     <link rel="stylesheet" href="main.css" />
 
     <link rel='stylesheet prefetch' href='data_picket.css'>
-    <link href="//fonts.googleapis.com/css?family=Roboto:700,500,400,300,100&amp;subset=latin,latin-ext" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:700,500,400,300,200,100&amp;subset=latin,latin-ext" rel="stylesheet">
+
   </head>
   <body>
+    <div class="content-central">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Agende seu Pedido</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Mauris sagittis pellentesque lacus eleifend lacinia...
+        <div class="searchheader">
+          <h1>Diariamente</h1>
+        </div>
+        <div>
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+            <input type="checkbox" id="switch-1" class="mdl-switch__input" >
+          </label>
+          <p>Caso essa opção esteja ligada, o boia ira pedir automaticamente seu almoço
+          todos os dias com todas as opções dispoviveis no cardápio. Lembre-se,
+          caso não vá almoçar na empresa, você deve cancelar o pedido ou disponiliza-lo
+          aqui. </p>
+        </div>
 
-
-    <div>
       <div class="searchheader">
-        <h1>Diariamente</h1>
+        <h1>Alguns dias da Semana</h1>
       </div>
       <div>
-        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
-          <input type="checkbox" id="switch-1" class="mdl-switch__input" >
-          <span class="mdl-switch__label">Ligado</span>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="seg">
+          <input type="checkbox" id="seg" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">Seg</span>
+        </label>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ter">
+          <input type="checkbox" id="ter" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">Ter</span>
+        </label>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="qua">
+          <input type="checkbox" id="qua" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">Qua</span>
+        </label>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="qui">
+          <input type="checkbox" id="qui" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">Qui</span>
+        </label>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="sex">
+          <input type="checkbox" id="sex" class="mdl-checkbox__input">
+          <span class="mdl-checkbox__label">Sex</span>
         </label>
       </div>
 
-      <div>
-        <div class="searchheader">
-          <h1>Alguns dias da Semana</h1>
-        </div>
-        <div>
-          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="seg">
-            <input type="checkbox" id="seg" class="mdl-checkbox__input">
-            <span class="mdl-checkbox__label">Seg</span>
-          </label>
-          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ter">
-            <input type="checkbox" id="ter" class="mdl-checkbox__input">
-            <span class="mdl-checkbox__label">Ter</span>
-          </label>
-          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="qua">
-            <input type="checkbox" id="qua" class="mdl-checkbox__input">
-            <span class="mdl-checkbox__label">Qua</span>
-          </label>
-          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="qui">
-            <input type="checkbox" id="qui" class="mdl-checkbox__input">
-            <span class="mdl-checkbox__label">Qui</span>
-          </label>
-          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="sex">
-            <input type="checkbox" id="sex" class="mdl-checkbox__input">
-            <span class="mdl-checkbox__label">Sex</span>
-          </label>
-        </div>
-      </div>
-
-
-      <div class="searchslide search1 on">
-        <div class="searchheader">
-          <h1>Dias Específicos</h1>
-        </div>
-        <form id="search" method="GET" action="" class="bbox"  accept-charset="utf-8">
-          <fieldset>
-            <div id="datepickbox1" class="datepickbox">
-              <input type="text" id="indnap" name="h" title="Indulási nap"  value="" class="searchinput datepicker" placeholder="When?"/>
-            </div>
-          </fieldset>
-        </form>
-        <div id="zebracontainer1" class="zbc">
-        </div>
-      </div><!--/searchslide-->
-    </div><!--/searchbox-->
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Sair
+      </a>
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+        Salvar
+      </a>
+    </div>
+    <div class="mdl-card__menu">
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">share</i>
+      </button>
+    </div>
+  </div>
+  <div class="logo">
+  <div>
   </body>
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script src='data_picket.js'></script>
-
-  <script>
-      $(document).ready(function(){
-          $('.datepicker').Zebra_DatePicker({direction: 1,always_visible:
-            $('#zebracontainer1')});
-          	$('#datepickbox1').bind('click',function(){
-          	$('.searchslide').addClass('active');
-          	$('#zebracontainer1').addClass('active');
-          });
-          $('.dp_daypicker, .dp_footer').bind('click',function(){
-          $('.searchslide').removeClass('active');
-          $('.zbc').removeClass('active');
-        });
-    });
-  </script>
 </html>

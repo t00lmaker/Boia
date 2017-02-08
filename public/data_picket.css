@@ -1,17 +1,6 @@
-body {padding: 0;margin: 0; background: #feea3a;}
+
 /*---SITESEARCH--*/
-.searchbox input::-webkit-input-placeholder { /* WebKit browsers */
-    color:    #9a9a9a;
-}
-.searchbox input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #9a9a9a;
-}
-.searchbox input::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #9a9a9a;
-}
-.searchbox input:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    #9a9a9a;
-}
+
 div, input, form, fieldset, span, h4 {
 box-sizing: border-box;
 -webkit-box-sizing: border-box;
@@ -20,13 +9,13 @@ box-sizing: border-box;
 
 .searchbox {
 display: inline-block;
-float: left;
-background:#3F51B5;
+float: center;
+background:#ccc;
 overflow: hidden;
 position: relative;
 font-size: 16px;
 font-family: 'Roboto';
-font-weight: 400;
+font-weight: 400; 
 }
 
 .searchbox input, .searchbox select {
@@ -79,7 +68,6 @@ height: auto;
 width: 100%;
 display: inline-block;
 float: left;
-height: 70px;
 position:relative;
 }
 .searchheader h1 {
@@ -88,7 +76,7 @@ margin-top:15px;
 font-weight: 300;
 font-size: 20px;
 width: 100%;
-color: #fff;
+color: #ccc;
 display: inline-block;
 border-bottom: 1px solid rgba(0,0,0,0.2);
 }

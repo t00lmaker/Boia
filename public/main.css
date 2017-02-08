@@ -1,12 +1,25 @@
 /* Css principal da aplicação */
 
+html { background: #CCCCCC; }
 
 .content-central{
-  margin: 15% auto;
+  margin: 5% auto;
   width: 50%;
   text-align: center;
 }
 
 .message-erro{
   color : #C2185B;
+}
+
+.demo-card-wide.mdl-card {
+  width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url('jambalaya_final.jpg') center / cover;
+}
+.demo-card-wide > .mdl-card__menu {
+  color: #fff;
 }

@@ -15,25 +15,34 @@
   </head>
 
   <body>
-    <div id="login" class="content-central">
-      <form action="login" method="POST"  >
-        <% if @message %>
-          <h4 class="message-erro"> <%= @message %></h4>
-        <% end %>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="text" id="usuario" name="usuario">
-          <label class="mdl-textfield__label" for="usuario">Usuário</label>
+    <div class="content-central">
+      <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
         </div>
-        <br>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class="mdl-textfield__input" type="password" id="senha" name="senha">
-          <label class="mdl-textfield__label" for="senha">Senha</label>
+        <div class="mdl-card__supporting-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Mauris sagittis pellentesque lacus eleifend lacinia...
+          <div id="login" class="content-central">
+            <form action="login" method="POST"  >
+              <% if @message %>
+                <h4 class="message-erro"> <%= @message %></h4>
+                <% end %>
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="usuario" name="usuario">
+                  <label class="mdl-textfield__label" for="usuario">Usuário</label>
+                </div>
+                <br>
+                <div class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="password" id="senha" name="senha">
+                  <label class="mdl-textfield__label" for="senha">Senha</label>
+                </div>
+                <br>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                  Entrar
+                </button>
+              </form>
         </div>
-        <br>
-        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-          Entrar
-        </button>
-      </form>
+      </div>
     </div>
   </body>
 

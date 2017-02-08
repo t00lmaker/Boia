@@ -1,0 +1,228 @@
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+BUU!
+rake aborted!
+NameError: uninitialized constant Agendamento
+/Users/toolmaker/git/Boia/Rakefile:10:in `block in <top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => pedir_almoco
+(See full trace by running task with --trace)
+rake aborted!
+NameError: uninitialized constant Agendamento
+/Users/toolmaker/git/Boia/Rakefile:10:in `block in <top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => pedir_almoco
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/Rakefile:11: syntax error, unexpected keyword_in, expecting ')'
+  for (ag in agendamentos  )
+            ^
+/Users/toolmaker/git/Boia/Rakefile:14: syntax error, unexpected keyword_end, expecting end-of-input
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)

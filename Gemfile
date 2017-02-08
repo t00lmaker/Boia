@@ -6,3 +6,4 @@ gem "sinatra-activerecord"
 gem "mysql2"
 gem "rake"
 gem "sinatra-basic-auth"
+gem 'whenever', :require => false
