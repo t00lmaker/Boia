@@ -1,25 +1,97 @@
 
-<html lang="en">
-
+<html>
   <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="description" content="Boia, um auxiliar do Jbroca.">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-      <title>Boia</title>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-pink.min.css" />
-      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-yellow.min.css" />
-      <link rel="stylesheet" href="main.css" />
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Boia, um auxiliar do Jbroca.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Boia - Agenda</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,500,400,300,100&amp;subset=latin,latin-ext">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700,500,400,300,200,100&amp;subset=latin,latin-ext" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-pink.min.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-yellow.min.css" />
+    <link rel="stylesheet" href="main.css" />
+
   </head>
-
   <body>
+    <div class="content-central">
+      <form action="/save" method="post"
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text"></h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          <h4> Olá <%= @colaborador.usuario.login %>! </h4>
+          <p>
+            Esse é o boia qua ajuda a você a não ficar sem almoço.
+            Abaixo você pode agendar a forma que quer ele faça o pedido por você.
+            Você receberá um lembrete no email cada vez que o Boia realizar o seu
+            pedido automaticamente. Lembre-se de cancelar o pedido no Jbroca caso
+            não possa mais almoçar conosco.
+          </p>
+          <hr />
+          <div class="searchheader">
+            <h4>Diariamente</h4>
+          </div>
+          <div style="width:3%; margin:3% auto">
+            <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+              <input name="diario" type="checkbox" id="switch-1" class="mdl-switch__input"  <%= @agenda.diario ? 'checked' : '' %> >
+            </label>
+          </div>
+          <div>
+            <p>Caso essa opção esteja ligada, o boia ira pedir automaticamente seu almoço
+            todos os dias com todas as opções dispoviveis no cardápio. Lembre-se,
+            caso não vá almoçar na empresa, você deve cancelar o pedido ou disponiliza-lo
+            aqui. </p>
+          </div>
+          <hr />
+        <div class="searchheader">
+          <h4>Alguns dias da Semana</h4>
+        </div>
+        <div style="width: 20%; margin:auto">
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="seg">
+            <input name="pedir_seg" type="checkbox" id="seg" class="mdl-checkbox__input" <%= @agenda.pedir_seg ? 'checked' : '' %>>
+            <span class="mdl-checkbox__label">Seg</span>
+          </label>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="ter">
+            <input name="pedir_ter" type="checkbox" id="ter" class="mdl-checkbox__input" <%= @agenda.pedir_ter ? 'checked' : '' %> >
+            <span class="mdl-checkbox__label">Ter</span>
+          </label>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="qua">
+            <input name="pedir_qua" type="checkbox" id="qua" class="mdl-checkbox__input" <%= @agenda.pedir_qua ? 'checked' : '' %> >
+            <span class="mdl-checkbox__label">Qua</span>
+          </label>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="qui">
+            <input name="pedir_qui" type="checkbox" id="qui" class="mdl-checkbox__input" <%= @agenda.pedir_qui ? 'checked' : '' %> >
+            <span class="mdl-checkbox__label">Qui</span>
+          </label>
+          <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="sex">
+            <input name="pedir_sex" type="checkbox" id="sex" class="mdl-checkbox__input" <%= @agenda.pedir_sex ? 'checked' : '' %> />
+            <span class="mdl-checkbox__label">Sex</span>
+          </label>
+        </div>
 
-    <h5>Olá, <%= @user.login %>!&nbsp; |&nbsp; <a href="/logout">sair</a></h5>
-
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Sair
+          </a>
+          <input type="submit" value="Salvar" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" />
+        </div>
+      </form>
+    <div class="mdl-card__menu">
+      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+        <i class="material-icons">share</i>
+      </button>
+    </div>
+  </div>
+  <div class="logo">
+  <div>
   </body>
-
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-
+  <script></script>
 </html>

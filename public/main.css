@@ -16,10 +16,14 @@ html { background: #CCCCCC; }
   width: 512px;
 }
 .demo-card-wide > .mdl-card__title {
-  color: #fff;
+  color: red;
   height: 176px;
   background: url('jambalaya_final.jpg') center / cover;
 }
 .demo-card-wide > .mdl-card__menu {
-  color: #fff;
+  color: rgb(255,87,34);
+}
+
+h3, h4, h1{
+  color: rgb(255,87,34);
 }

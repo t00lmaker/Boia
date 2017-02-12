@@ -2,14 +2,14 @@ require "sinatra"
 
 require "sinatra/activerecord"
 
-set :database, {adapter: "mysql2", database: "jbroca", user: "root", password: "root"}
-
-enable :sessions
+require 'net/smtp'
+require 'mailit'
 
 class Usuario  < ActiveRecord::Base
    self.table_name = "usuario"
 
    def logar(senha)
+     puts ">> #{senha.to_s} = #{jhash(senha).to_s}"
      self.senha.to_s == jhash(senha).to_s
    end
 
@@ -50,6 +50,9 @@ class Agendamento < ActiveRecord::Base
   belongs_to :colaborador, :foreign_key => 'idColaborador', :primary_key => 'id'
 end
 
+
+set :database, {adapter: "mysql2", database: "jbroca", user: "root", password: "root"}
+enable :sessions
 get '/' do
   erb :index
 end
@@ -81,10 +84,32 @@ end
 
 get '/agenda' do
  if(session[:id])
-   @user = Usuario.find(session[:id])
+   @colaborador = Colaborador.where(usuario: Usuario.find(session[:id])).first
+   @agenda = Agendamento.where(colaborador:  @colaborador, ativo: true).last
+   @agenda = Agendamento.new unless @agenda
+   session[:id_agenda] = @agenda.id
    erb :agenda
  else
+    session[id_agenda] = nil
     @message = "Realize login para realizar o a agendamento."
    redirect :login
  end
+end
+
+post '/save' do
+  if(session[:id_agenda])
+    @agenda = Agendamento.find(session[:id_agenda])
+    @agenda.ativo = false
+    @agenda.save
+  end
+  @agenda = Agendamento.new(params)
+  @agenda.create_at = Time.now
+  @agenda.colaborador = Colaborador.where(usuario: Usuario.find(session[:id])).first
+  @agenda.ativo = true
+  if(@agenda.save)
+     @mensage = "Ok! Seu agendamento foi salvo."
+  else
+     @mensage = "Ops, tivemos algum problema ao salvar seu agendamento."
+  end
+  redirect :agenda
 end
