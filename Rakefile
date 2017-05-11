@@ -1,5 +1,5 @@
 require "sinatra/activerecord/rake"
-require "pony"
+require "./app"
 
 namespace :db do
   task :load_config do
@@ -8,10 +8,27 @@ namespace :db do
 end
 
 task :pedir_almoco do
-  #agendamentos = Agendamento.where(ativo: true)
-  #for (ag in agendamentos  )
-#    pedido = Pedido.where(colaborador: ag.colaborador, data: Date.new)
-#  end
+  amanha = Time.now - (60 * 60 * 24)
+  pedir_para = []
+  agendamentos = Agendamento.where(ativo: true)
+  pedidos = Pedido.where(data: amanha)
+  colaboradores = pedidos.map(&:colaborador)
+  cardapio = Cardapio.where(data:amanha, cancelado:false)
+  for ag in agendamentos
+    if(ag.pedir_hj?)
+      if(!colaboradores.include?(ag.colaborador))
+        pedido = Pedido.new
+        pedido.data = amanha
+        pedido.carne1 = cardapio.carnes[0]
+        pedido.carne2 = cardapio.carnes[1]
+        pedido.arroz = cardapio.arroz
+        pedido.salada = cardapio.salada
+        pedido.feijao = cardapio.feijao
+        peiddo.farofa = cardapio.farofa
+        pedido.save
+      end
+    end
+  end
 end
 
 task :enviar_email do

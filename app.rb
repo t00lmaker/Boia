@@ -1,9 +1,7 @@
 require "sinatra"
-
 require "sinatra/activerecord"
-
 require 'net/smtp'
-require 'mailit'
+
 
 class Usuario  < ActiveRecord::Base
    self.table_name = "usuario"
@@ -35,6 +33,17 @@ class Opcao < ActiveRecord::Base
 end
 class Cardapio < ActiveRecord::Base
    self.table_name = "cardapio"
+   has_many :opcoes
+
+   def carnes
+     opcaoes.select{|op| op.tipoOpcao == 'CARNE'}
+   end
+   def arroz
+     opcaoes.select{|op| op.tipoOpcao == 'ARROZ'}
+   end
+   def salada
+     opcaoes.select{|op| op.tipoOpcao == 'SALADA'}
+   end
 end
 class Pedido < ActiveRecord::Base
    self.table_name = "pedido"
@@ -48,6 +57,18 @@ end
 class Agendamento < ActiveRecord::Base
   self.table_name = "agendamento"
   belongs_to :colaborador, :foreign_key => 'idColaborador', :primary_key => 'id'
+
+  def pedir_hj?()
+      amanha = Time.now + (60 * 60 * 24)
+      self.ativo &&
+      (self.diario ||
+      (amanha.monday? && self.pedir_seg) ||
+      (amanha.tuesday? && self.pedir_ter) ||
+      (amanha.wednesday? && self.pedir_qua) ||
+      (amanha.thursday? && self.pedir_qui) ||
+      (amanha.friday? && self.pedir_sex))
+  end
+
 end
 
 
