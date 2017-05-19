@@ -71,8 +71,15 @@ class Agendamento < ActiveRecord::Base
 
 end
 
+ActiveRecord::Base.establish_connection(
+  :adapter  => "mysql2",
+  :host     => "10.0.0.16",
+  :username => "jbroca",
+  :password => "root!@#1nf0",
+  :database => "jbroca"
+)
 
-set :database, {adapter: "mysql2", database: "jbroca", user: "root", password: "root"}
+# set :database, {host: '10.0.0.16', adapter: "mysql2", database: "jbroca", user: "jbroca", password: "root@1nf0"}
 enable :sessions
 get '/' do
   erb :index
