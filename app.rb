@@ -4,8 +4,6 @@ require 'net/smtp'
 require './config/environments'
 
 set :bind, '0.0.0.0'
-set :enviroment, ENV['RACK_ENV'] || 'production'
-
 
 class Usuario  < ActiveRecord::Base
    self.table_name = "usuario"

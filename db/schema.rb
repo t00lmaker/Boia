@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170721114405) do
 
-  create_table "agendamento", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "agendamento", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.boolean  "ativo"
     t.integer  "tipo"
     t.integer  "idColaborador"
