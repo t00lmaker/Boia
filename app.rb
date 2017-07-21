@@ -3,6 +3,9 @@ require "sinatra/activerecord"
 require 'net/smtp'
 require './config/environments'
 
+set :bind, '0.0.0.0'
+set :enviroment, ENV['RACK_ENV'] || 'production'
+
 
 class Usuario  < ActiveRecord::Base
    self.table_name = "usuario"
@@ -72,14 +75,14 @@ class Agendamento < ActiveRecord::Base
 
 end
 
-
-ActiveRecord::Base.establish_connection(
-  :adapter  => "mysql2",
-  :host     => "localhost",   #"10.0.0.16",
-  :username => "root",
-  :password => "root",
-  :database => "jbroca"
-)
+#
+#ActiveRecord::Base.establish_connection(
+#  :adapter  => "mysql2",
+#  :host     => "localhost",   #"10.0.0.16",
+#  :username => "root",
+#  :password => "root",
+#  :database => "jbroca"
+#)
 
 # set :database, {host: '10.0.0.16', adapter: "mysql2", database: "jbroca", user: "jbroca", password: "root@1nf0"}
 enable :sessions
