@@ -18,6 +18,7 @@
 # Learn more: http://github.com/javan/whenever
 
 set :output, "logs/cron_log.log"
-every 1.minutes do
+#todos os dias as 16:30
+every '17 10 * * *' do
   rake "pedir_almoco"
 end
