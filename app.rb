@@ -33,7 +33,7 @@ class Opcao < ActiveRecord::Base
 end
 class Cardapio < ActiveRecord::Base
    self.table_name = "cardapio"
-   has_many :opcoes
+   has_many :opcaoes, foreign_key: :idCardapio
 
    def carnes
      opcaoes.select{|op| op.tipoOpcao == 'CARNE'}
@@ -73,9 +73,9 @@ end
 
 ActiveRecord::Base.establish_connection(
   :adapter  => "mysql2",
-  :host     => "10.0.0.16",
-  :username => "jbroca",
-  :password => "root!@#1nf0",
+  :host     => "localhost",   #"10.0.0.16",
+  :username => "root",
+  :password => "root",
   :database => "jbroca"
 )
 

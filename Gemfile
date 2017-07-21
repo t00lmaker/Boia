@@ -8,3 +8,6 @@ gem "rake"
 gem "sinatra-basic-auth"
 gem 'whenever', :require => false
 gem 'pony'
+group :development do
+  gem 'byebug'
+end
