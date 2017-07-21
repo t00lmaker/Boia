@@ -136,7 +136,7 @@ post '/save' do
     @agenda.save
   end
   @agenda = Agendamento.new(params)
-  @agenda.create_at = Time.now
+  @agenda.created_at = Time.now
   @agenda.colaborador = Colaborador.where(usuario: Usuario.find(session[:id])).first
   @agenda.ativo = true
   if(@agenda.save)
