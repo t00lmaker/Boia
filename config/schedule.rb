@@ -19,6 +19,6 @@
 
 set :output, "logs/cron_log.log"
 #todos os dias as 16:30
-every '17 10 * * *' do
+every '30 15 * * *' do
   rake "pedir_almoco"
 end

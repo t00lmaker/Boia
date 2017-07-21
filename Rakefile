@@ -15,20 +15,24 @@ task :pedir_almoco do
   agendamentos = Agendamento.where(ativo: true)
   pedidos = Pedido.where(data: amanha)
   colaboradores = pedidos.map(&:colaborador)
-  byebug
-  cardapio = Cardapio.where(data: amanha, cancelado: "\x00")
-  for ag in agendamentos
-    if(ag.pedir_hj?)
-      if(!colaboradores.include?(ag.colaborador))
-        pedido = Pedido.new
-        pedido.data = amanha
-        pedido.dataCadastro = Time.now
-        pedido.colaborador = ag.colaborador
-        pedido.carne1 = cardapio.carnes.first
-        pedido.carne2 = cardapio.carnes.second
-        pedido.arroz = cardapio.arroz.first
-        pedido.salada = cardapio.salada.first
-        pedido.save
+  cardapios = Cardapio.where(data: amanha, cancelado: "\x00").to_a
+  if(cardapios.empty?)
+    #enviar email dizendo que não foi possivel fazer o pedido
+  else
+    cardapio = cardapios.first
+    for ag in agendamentos
+      if(ag.pedir_hj?)
+        if(!colaboradores.include?(ag.colaborador))
+          pedido = Pedido.new
+          pedido.data = amanha
+          pedido.dataCadastro = Time.now
+          pedido.colaborador = ag.colaborador
+          pedido.carne1 = cardapio.carnes.first
+          pedido.carne2 = cardapio.carnes.second
+          pedido.arroz = cardapio.arroz.first
+          pedido.salada = cardapio.salada.first
+          pedido.save
+        end
       end
     end
   end
