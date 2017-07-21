@@ -12,6 +12,10 @@ html { background: #CCCCCC; }
   color : #C2185B;
 }
 
+.message-ok{
+  color : green;
+}
+
 .demo-card-wide.mdl-card {
   width: 512px;
 }

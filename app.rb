@@ -2,6 +2,7 @@ require "sinatra"
 require "sinatra/activerecord"
 require 'net/smtp'
 require './config/environments'
+require 'sinatra/flash'
 
 
 class Usuario  < ActiveRecord::Base
@@ -83,6 +84,13 @@ ActiveRecord::Base.establish_connection(
 
 # set :database, {host: '10.0.0.16', adapter: "mysql2", database: "jbroca", user: "jbroca", password: "root@1nf0"}
 enable :sessions
+set :show_exceptions, false
+#disable :raise_errors
+
+error Exception do
+  erb :error500
+end
+
 get '/' do
   erb :index
 end
@@ -121,7 +129,7 @@ get '/agenda' do
    erb :agenda
  else
     session[id_agenda] = nil
-    @message = "Realize login para realizar o a agendamento."
+    @message = "Realize login para realizar o agendamento."
    redirect :login
  end
 end
@@ -131,15 +139,16 @@ post '/save' do
     @agenda = Agendamento.find(session[:id_agenda])
     @agenda.ativo = false
     @agenda.save
+    flash[:ok] = "Ok! Seu agendamento foi salvo."
   end
   @agenda = Agendamento.new(params)
   @agenda.create_at = Time.now
   @agenda.colaborador = Colaborador.where(usuario: Usuario.find(session[:id])).first
   @agenda.ativo = true
   if(@agenda.save)
-     @mensage = "Ok! Seu agendamento foi salvo."
+     flash[:ok] = "Ok! Seu agendamento foi salvo."
   else
-     @mensage = "Ops, tivemos algum problema ao salvar seu agendamento."
+     flash[:erro] = "Ops, tivemos algum problema ao salvar seu agendamento."
   end
   redirect :agenda
 end

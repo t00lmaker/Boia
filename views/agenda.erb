@@ -25,6 +25,10 @@
           <h2 class="mdl-card__title-text"></h2>
         </div>
         <div class="mdl-card__supporting-text">
+
+          <h4 class="message-ok"> <%= flash[:ok] %></h4>
+          <h4 class="message-erro"> <%= flash[:erro] %></h4>
+
           <h4> Olá <%= @colaborador.usuario.login %>! </h4>
           <p>
             Esse é o boia qua ajuda a você a não ficar sem almoço.
