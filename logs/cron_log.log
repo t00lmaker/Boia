@@ -3479,3 +3479,90 @@ Tasks: TOP => pedir_almoco
    21:     if(ag.pedir_hj?)
    22:       if(!colaboradores.include?(ag.colaborador))
    23:         pedido = Pedido.new
+(byebug) rake aborted!
+NoMethodError: undefined method `carnes' for #<Cardapio::ActiveRecord_Relation:0x007f9aa3a575b8>
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:123:in `method_missing'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:93:in `method_missing'
+/Users/toolmaker/git/Boia/Rakefile:27:in `block (2 levels) in <top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/toolmaker/git/Boia/Rakefile:20:in `block in <top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => pedir_almoco
+(See full trace by running task with --trace)
+
+[14, 23] in /Users/toolmaker/git/Boia/Rakefile
+   14:   pedir_para = []
+   15:   agendamentos = Agendamento.where(ativo: true)
+   16:   pedidos = Pedido.where(data: amanha)
+   17:   colaboradores = pedidos.map(&:colaborador)
+   18:   byebug
+=> 19:   cardapio = Cardapio.where(data: amanha, cancelado: "\x00")
+   20:   for ag in agendamentos
+   21:     if(ag.pedir_hj?)
+   22:       if(!colaboradores.include?(ag.colaborador))
+   23:         pedido = Pedido.new
+(byebug) rake aborted!
+NoMethodError: undefined method `carnes' for #<Cardapio::ActiveRecord_Relation:0x007fd7ae283920>
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:123:in `method_missing'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:93:in `method_missing'
+/Users/toolmaker/git/Boia/Rakefile:27:in `block (2 levels) in <top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/toolmaker/git/Boia/Rakefile:20:in `block in <top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => pedir_almoco
+(See full trace by running task with --trace)
+
+[14, 23] in /Users/toolmaker/git/Boia/Rakefile
+   14:   pedir_para = []
+   15:   agendamentos = Agendamento.where(ativo: true)
+   16:   pedidos = Pedido.where(data: amanha)
+   17:   colaboradores = pedidos.map(&:colaborador)
+   18:   byebug
+=> 19:   cardapio = Cardapio.where(data: amanha, cancelado: "\x00")
+   20:   for ag in agendamentos
+   21:     if(ag.pedir_hj?)
+   22:       if(!colaboradores.include?(ag.colaborador))
+   23:         pedido = Pedido.new
+(byebug) rake aborted!
+NoMethodError: undefined method `carnes' for #<Cardapio::ActiveRecord_Relation:0x007fd9859faae0>
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:123:in `method_missing'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:93:in `method_missing'
+/Users/toolmaker/git/Boia/Rakefile:27:in `block (2 levels) in <top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.1/lib/active_record/relation/delegation.rb:38:in `each'
+/Users/toolmaker/git/Boia/Rakefile:20:in `block in <top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => pedir_almoco
+(See full trace by running task with --trace)
+
+[14, 23] in /Users/toolmaker/git/Boia/Rakefile
+   14:   pedir_para = []
+   15:   agendamentos = Agendamento.where(ativo: true)
+   16:   pedidos = Pedido.where(data: amanha)
+   17:   colaboradores = pedidos.map(&:colaborador)
+   18:   byebug
+=> 19:   cardapio = Cardapio.where(data: amanha, cancelado: "\x00")
+   20:   for ag in agendamentos
+   21:     if(ag.pedir_hj?)
+   22:       if(!colaboradores.include?(ag.colaborador))
+   23:         pedido = Pedido.new
+rake aborted!
+SyntaxError: /Users/toolmaker/git/Boia/app.rb:75: syntax error, unexpected <<, expecting end-of-input
+<<<<<<< HEAD
+  ^
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:263:in `rescue in load_dependency'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:256:in `load_dependency'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+/Users/toolmaker/git/Boia/Rakefile:2:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/toolmaker/.rvm/gems/ruby-2.3.0/bin/ruby_executable_hooks:15:in `<main>'
+(See full trace by running task with --trace)
