@@ -10,15 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520145937) do
+ActiveRecord::Schema.define(version: 20170721114405) do
 
-  create_table "agendamento", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "agendamento", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.boolean  "ativo"
     t.integer  "tipo"
     t.integer  "idColaborador"
     t.date     "data"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "diario",        default: false
+    t.boolean  "pedir_seg",     default: false
+    t.boolean  "pedir_ter",     default: false
+    t.boolean  "pedir_qua",     default: false
+    t.boolean  "pedir_qui",     default: false
+    t.boolean  "pedir_sex",     default: false
   end
 
   create_table "cardapio", id: :bigint, force: :cascade, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1" do |t|

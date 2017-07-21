@@ -4,6 +4,7 @@ require 'net/smtp'
 require './config/environments'
 require 'sinatra/flash'
 
+set :bind, '0.0.0.0'
 
 class Usuario  < ActiveRecord::Base
    self.table_name = "usuario"
@@ -73,14 +74,14 @@ class Agendamento < ActiveRecord::Base
 
 end
 
-
-ActiveRecord::Base.establish_connection(
-  :adapter  => "mysql2",
-  :host     => "localhost",   #"10.0.0.16",
-  :username => "root",
-  :password => "root",
-  :database => "jbroca"
-)
+#
+#ActiveRecord::Base.establish_connection(
+#  :adapter  => "mysql2",
+#  :host     => "localhost",   #"10.0.0.16",
+#  :username => "root",
+#  :password => "root",
+#  :database => "jbroca"
+#)
 
 # set :database, {host: '10.0.0.16', adapter: "mysql2", database: "jbroca", user: "jbroca", password: "root@1nf0"}
 enable :sessions
@@ -142,7 +143,7 @@ post '/save' do
     flash[:ok] = "Ok! Seu agendamento foi salvo."
   end
   @agenda = Agendamento.new(params)
-  @agenda.create_at = Time.now
+  @agenda.created_at = Time.now
   @agenda.colaborador = Colaborador.where(usuario: Usuario.find(session[:id])).first
   @agenda.ativo = true
   if(@agenda.save)
