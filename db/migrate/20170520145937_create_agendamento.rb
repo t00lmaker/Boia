@@ -7,6 +7,5 @@ class CreateAgendamento < ActiveRecord::Migration[5.0]
       t.date    :data
       t.timestamps
     end
-
   end
 end

@@ -1,6 +1,10 @@
 require "sinatra/activerecord/rake"
 require "./app"
 require 'pony'
+require './lib/email_sender'
+require './lib/templates_emails'
+require './config/environments'
+require 'byebug'
 
 namespace :db do
   task :load_config do
@@ -9,45 +13,48 @@ namespace :db do
 end
 
 task :pedir_almoco do
-  amanha = Time.now - (60 * 60 * 24)
+  amanha = Time.now + (60 * 60 * 24)
   pedir_para = []
   agendamentos = Agendamento.where(ativo: true)
   pedidos = Pedido.where(data: amanha)
   colaboradores = pedidos.map(&:colaborador)
-  cardapio = Cardapio.where(data:amanha, cancelado:false)
-  for ag in agendamentos
-    if(ag.pedir_hj?)
-      if(!colaboradores.include?(ag.colaborador))
-        pedido = Pedido.new
-        pedido.data = amanha
-        pedido.carne1 = cardapio.carnes[0]
-        pedido.carne2 = cardapio.carnes[1]
-        pedido.arroz = cardapio.arroz
-        pedido.salada = cardapio.salada
-        pedido.feijao = cardapio.feijao
-        peiddo.farofa = cardapio.farofa
-        pedido.save
+  cardapios = Cardapio.where(data: amanha, cancelado: "\x00").to_a
+  if(cardapios.empty?)
+    #enviar email dizendo que não foi possivel fazer o pedido
+  else
+    cardapio = cardapios.first
+    for ag in agendamentos
+      if(ag.pedir_hj?)
+        if(!colaboradores.include?(ag.colaborador))
+          pedido = Pedido.new
+          pedido.data = amanha
+          pedido.dataCadastro = Time.now
+          pedido.colaborador = ag.colaborador
+          pedido.opcao1 = cardapio.carnes.first
+          pedido.opcao2 = cardapio.carnes.second
+          pedido.arroz = cardapio.arroz.first
+          pedido.salada = cardapio.salada.first
+          pedido.save
+          pedidoEfetuado = AgendamentoEfetuado.new
+          pedidoEfetuado.pedido = pedido
+          pedidoEfetuado.notificado = false
+          pedidoEfetuado.save
+        end
       end
     end
   end
 end
 
 task :enviar_email do
-  Pony.options = {
-  :subject => "Apresentacao Boia",
-  :body => "This is the body.",
-  :headers => { 'Content-Type' => 'text/html' },
-  :via => :smtp,
-  :via_options => {
-    :address              => 'smtp.gmail.com',
-    :port                 => '587',
-    :enable_starttls_auto => true,
-    :user_name            => 'contato-no-reply@infoway-pi.com.br',
-    :password             => 'cnt-n0t-r3ply',
-    :authentication       => :plain, # :plain, :login, :cram_md5, no auth by default
-    :domain               => "localhost.localdomain"
-  }
-}
+  sender = EmailSender.new
+  t = TemplatesEmails.new
+  pedidos = AgendamentoEfetuado.includes(:pedido).where(notificado: false).to_a
+  pedidos.each do |p|
+    byebug
+    sender.send('luanpontes2@gmail.com', 'Boia - Pedido de Almoço', t.notificacao_pedido(p.pedido))
+    p.data_notificacao = Time.now
+    p.notificado = true
+    p.save
+  end
 
-Pony.mail(:to => 'djaircarvalho.dj7@gmail.com')
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721114405) do
+ActiveRecord::Schema.define(version: 20170724200606) do
 
   create_table "agendamento", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.boolean  "ativo"
@@ -25,6 +25,22 @@ ActiveRecord::Schema.define(version: 20170721114405) do
     t.boolean  "pedir_qua",     default: false
     t.boolean  "pedir_qui",     default: false
     t.boolean  "pedir_sex",     default: false
+  end
+
+  create_table "agendamento_efetuado", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.boolean  "notificado"
+    t.integer  "idPedido"
+    t.date     "data_notificacao"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "agendamentos_efetuados", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.boolean  "notificado"
+    t.integer  "idPedido"
+    t.date     "data_notificacao"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "cardapio", id: :bigint, force: :cascade, options: "ENGINE=MyISAM DEFAULT CHARSET=latin1" do |t|

@@ -68,3 +68,9 @@ class Agendamento < ActiveRecord::Base
   end
 
 end
+
+class AgendamentoEfetuado < ActiveRecord::Base
+  self.table_name = "agendamento_efetuado"
+
+  belongs_to :pedido, :class_name => Pedido, :foreign_key => :idPedido, :primary_key => :id
+end

@@ -4,8 +4,8 @@ configure :production do
   ActiveRecord::Base.establish_connection(
   :adapter  => "mysql2",
   :host     => "10.0.0.16",
-  :username => "djair",
-  :password => "rootinfoway",
+  :username => "jbroca",
+  :password => "jbroca!@#1nf0",
   :database => "jbroca"
 )
 end

@@ -9,6 +9,4 @@ gem "sinatra-basic-auth"
 gem 'whenever', :require => false
 gem 'pony'
 gem 'sinatra-flash'
-group :development do
-  gem 'byebug'
-end
+gem 'byebug'
