@@ -1,6 +1,4 @@
 #!/bin/bash
 rake db:migrate
 bundle install --without development test
-ruby $APP_HOME/app.rb -p 3000
-
-
+RACK_ENV=production ruby app.rb -p 3000

@@ -1,6 +1,6 @@
 require "sinatra/activerecord/rake"
 require "./app"
-require "byebug"
+require 'pony'
 
 
 namespace :db do

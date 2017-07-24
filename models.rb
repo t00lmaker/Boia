@@ -1,7 +1,4 @@
-require "sinatra"
 require "sinatra/activerecord"
-require 'net/smtp'
-require './config/environments'
 
 
 class Usuario  < ActiveRecord::Base
@@ -34,7 +31,7 @@ class Opcao < ActiveRecord::Base
 end
 class Cardapio < ActiveRecord::Base
    self.table_name = "cardapio"
-   has_many :opcoes
+   has_many :opcaoes, foreign_key: :idCardapio
 
    def carnes
      opcaoes.select{|op| op.tipoOpcao == 'CARNE'}
@@ -70,66 +67,4 @@ class Agendamento < ActiveRecord::Base
       (amanha.friday? && self.pedir_sex))
   end
 
-end
-
-enable :sessions
-get '/' do
-  erb :index
-end
-
-get '/login' do
-  erb :index
-end
-
-post '/login' do
-  @user = Usuario.find_by_login(params[:usuario])
-  if(@user)
-    if(@user.logar(params[:senha]))
-      session[:id] = @user.id
-      redirect :agenda
-    end
-  end
-  @message = "Não foi possível realizar login, verifique suas credenciais no JBroca."
-  erb :index
-end
-
-get '/about' do
- erb :about
-end
-
-get '/logout' do
- session.clear
- redirect :login
-end
-
-get '/agenda' do
- if(session[:id])
-   @colaborador = Colaborador.where(usuario: Usuario.find(session[:id])).first
-   @agenda = Agendamento.where(colaborador:  @colaborador, ativo: true).last
-   @agenda = Agendamento.new unless @agenda
-   session[:id_agenda] = @agenda.id
-   erb :agenda
- else
-    session[id_agenda] = nil
-    @message = "Realize login para realizar o a agendamento."
-   redirect :login
- end
-end
-
-post '/save' do
-  if(session[:id_agenda])
-    @agenda = Agendamento.find(session[:id_agenda])
-    @agenda.ativo = false
-    @agenda.save
-  end
-  @agenda = Agendamento.new(params)
-  @agenda.create_at = Time.now
-  @agenda.colaborador = Colaborador.where(usuario: Usuario.find(session[:id])).first
-  @agenda.ativo = true
-  if(@agenda.save)
-     @mensage = "Ok! Seu agendamento foi salvo."
-  else
-     @mensage = "Ops, tivemos algum problema ao salvar seu agendamento."
-  end
-  redirect :agenda
 end
