@@ -5,7 +5,6 @@ class EmailSender
   def initialize
     @options = {
       :subject => "Apresentacao Boia",
-      :body => "Olá, sou o boia.",
       :headers => { 'Content-Type' => 'text/html' },
       :via => :smtp,
       :via_options => {

@@ -14,7 +14,12 @@
 # Learn more: http://github.com/javan/whenever
 
 set :output, "logs/cron_log.log"
-#todos os dias as 16:30
-every '30 15 * * *' do
+#todos os dias as 15:00
+every '00 15 * * *' do
   rake "pedir_almoco"
+end
+
+#notifica todos os dias 15:10
+every '10 15 * * *' do
+  rake "enviar_email"
 end

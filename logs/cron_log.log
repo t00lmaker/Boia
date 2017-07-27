@@ -14,3 +14,7 @@ LoadError: cannot load such file -- byebug
 /bin/bash: bundle: command not found
 /bin/bash: bundle: command not found
 /bin/bash: bundle: command not found
+Non US-ASCII detected and no charset defined.
+Defaulting to UTF-8, set your own if this is incorrect.
+Non US-ASCII detected and no charset defined.
+Defaulting to UTF-8, set your own if this is incorrect.

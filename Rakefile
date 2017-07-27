@@ -4,7 +4,7 @@ require 'pony'
 require './lib/email_sender'
 require './lib/templates_emails'
 require './config/environments'
-#require 'byebug'
+require 'byebug'
 
 namespace :db do
   task :load_config do
@@ -14,13 +14,14 @@ end
 
 task :pedir_almoco do
   amanha = Time.now + (60 * 60 * 24)
-  pedir_para = []
   agendamentos = Agendamento.where(ativo: true)
   pedidos = Pedido.where(data: amanha)
   colaboradores = pedidos.map(&:colaborador)
   cardapios = Cardapio.where(data: amanha, cancelado: "\x00").to_a
   if(cardapios.empty?)
-    #enviar email dizendo que não foi possivel fazer o pedido
+    sender = EmailSender.new
+    t = TemplatesEmails.new
+    sender.send('luan@infoway-pi.com.br', 'Boia - Cardápio não encontrado', t.cardapio_nao_cadastrado)
   else
     cardapio = cardapios.first
     for ag in agendamentos
@@ -50,8 +51,7 @@ task :enviar_email do
   t = TemplatesEmails.new
   pedidos = AgendamentoEfetuado.includes(:pedido).where(notificado: false).to_a
   pedidos.each do |p|
-    # byebug
-    sender.send('luanpontes2@gmail.com', 'Boia - Pedido de Almoço', t.notificacao_pedido(p.pedido))
+    sender.send('luanpontes2@gmail.com', 'Boia - Pedido de Almoço', t.notificacao_pedido(Pedido.find(p.idPedido)))
     p.data_notificacao = Time.now
     p.notificado = true
     p.save
