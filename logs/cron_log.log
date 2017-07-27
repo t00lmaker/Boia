@@ -1,0 +1,16 @@
+/bin/bash: bundle: command not found
+/bin/bash: bundle: command not found
+/bin/bash: bundle: command not found
+rake aborted!
+LoadError: cannot load such file -- byebug
+/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `block in require'
+/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+/usr/local/bundle/gems/activesupport-5.0.1/lib/active_support/dependencies.rb:293:in `require'
+/app/Rakefile:3:in `<top (required)>'
+/usr/local/bundle/gems/rake-12.0.0/exe/rake:27:in `<top (required)>'
+(See full trace by running task with --trace)
+/bin/bash: bundle: command not found
+/bin/bash: bundle: command not found
+/bin/bash: bundle: command not found
+/bin/bash: bundle: command not found

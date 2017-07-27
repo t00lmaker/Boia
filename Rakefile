@@ -4,7 +4,7 @@ require 'pony'
 require './lib/email_sender'
 require './lib/templates_emails'
 require './config/environments'
-require 'byebug'
+#require 'byebug'
 
 namespace :db do
   task :load_config do
@@ -50,7 +50,7 @@ task :enviar_email do
   t = TemplatesEmails.new
   pedidos = AgendamentoEfetuado.includes(:pedido).where(notificado: false).to_a
   pedidos.each do |p|
-    byebug
+    # byebug
     sender.send('luanpontes2@gmail.com', 'Boia - Pedido de Almoço', t.notificacao_pedido(p.pedido))
     p.data_notificacao = Time.now
     p.notificado = true

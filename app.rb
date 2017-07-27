@@ -1,11 +1,12 @@
 require "sinatra"
 require 'net/smtp'
 require 'sinatra/flash'
-
 require './config/environments'
 require './models'
 
 enable :sessions
+use Rack::Session::Cookie, :key => 'rack.session', :path => '/', :secret => 'csdknjkjvsaoj54465665'
+
 set :show_exceptions, false
 set :bind, '0.0.0.0'
 
@@ -26,6 +27,7 @@ post '/login' do
   if(@user)
     if(@user.logar(params[:senha]))
       session[:id] = @user.id
+      puts "ID usuário: #{session[:id]}"
       redirect :agenda
     end
   end
@@ -63,6 +65,7 @@ post '/save' do
     @agenda.save
     flash[:ok] = "Ok! Seu agendamento foi salvo."
   end
+  puts "USUARIO: #{session[:id_agenda]}"
   @agenda = Agendamento.new(params)
   @agenda.created_at = Time.now
   @agenda.colaborador = Colaborador.where(usuario: Usuario.find(session[:id])).first
