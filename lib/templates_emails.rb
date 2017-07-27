@@ -5,7 +5,7 @@ class TemplatesEmails
     %{
       Olá, <br><br>
       eu sou o Boia e realizei o seu pedido conforme você me solicitou.
-      As opções de seu pedido foram: #{pedido.opcao1.nome} e #{pedido.opcao2.nome}.
+      As opções do seu pedido foram: #{pedido.opcao1.nome} e #{pedido.opcao2.nome}.
       <br>
       Peço perdão caso não tenha gostado do pedido, mas você pode alterar-lo no jBroca.
     }
