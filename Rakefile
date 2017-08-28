@@ -17,7 +17,7 @@ task :pedir_almoco do
   agendamentos = Agendamento.where(ativo: true)
   pedidos = Pedido.where(data: amanha)
   colaboradores = pedidos.map(&:colaborador)
-  cardapios = Cardapio.where(data: amanha, cancelado: "\x00").to_a
+  cardapios = Cardapio.where(data: Time.now, cancelado: "\x00").to_a
   if(cardapios.empty?)
     sender = EmailSender.new
     t = TemplatesEmails.new
@@ -49,9 +49,10 @@ end
 task :enviar_email do
   sender = EmailSender.new
   t = TemplatesEmails.new
-  pedidos = AgendamentoEfetuado.includes(:pedido).where(notificado: false).to_a
-  pedidos.each do |p|
-    sender.send('luanpontes2@gmail.com', 'Boia - Pedido de Almoço', t.notificacao_pedido(Pedido.find(p.idPedido)))
+  agendamentos = AgendamentoEfetuado.includes(:pedido).where(notificado: false).to_a
+  agendamentos.each do |a|
+    p = Pedido.find(a.idPedido)
+    sender.send(p.colaborador.email, 'Boia - Pedido de Almoço', t.notificacao_pedido(p))
     p.data_notificacao = Time.now
     p.notificado = true
     p.save
