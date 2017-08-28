@@ -27,15 +27,7 @@ ActiveRecord::Schema.define(version: 20170724200606) do
     t.boolean  "pedir_sex",     default: false
   end
 
-  create_table "agendamento_efetuado", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.boolean  "notificado"
-    t.integer  "idPedido"
-    t.date     "data_notificacao"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "agendamentos_efetuados", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "agendamento_efetuado", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.boolean  "notificado"
     t.integer  "idPedido"
     t.date     "data_notificacao"
