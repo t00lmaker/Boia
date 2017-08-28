@@ -52,10 +52,10 @@ task :enviar_email do
   agendamentos = AgendamentoEfetuado.includes(:pedido).where(notificado: false).to_a
   agendamentos.each do |a|
     p = Pedido.find(a.idPedido)
-    sender.send(p.colaborador.email, 'Boia - Pedido de Almoço', t.notificacao_pedido(p))
-    p.data_notificacao = Time.now
-    p.notificado = true
-    p.save
+    sender.send(p.colaborador.usuario.email, 'Boia - Pedido de Almoço', t.notificacao_pedido(p))
+    a.data_notificacao = Time.now
+    a.notificado = true
+    a.save
   end
 
 end
