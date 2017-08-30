@@ -15,11 +15,11 @@
 
 set :output, "logs/cron_log.log"
 #todos os dias as 15:00
-every :weekday, :at => '3pm' do
+every :weekday, :at => '3:40pm' do
   rake "pedir_almoco"
 end
 
 #notifica todos os dias 15:10
-every :weekday, :at => '3:05pm' do
+every :weekday, :at => '3:45pm' do
   rake "enviar_email"
 end
