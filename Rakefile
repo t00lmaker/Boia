@@ -13,11 +13,12 @@ namespace :db do
 end
 
 task :pedir_almoco do
+  hoje = Time.now
   amanha = Time.now + (60 * 60 * 24)
   agendamentos = Agendamento.where(ativo: true)
   pedidos = Pedido.where(data: amanha)
   colaboradores = pedidos.map(&:colaborador)
-  cardapios = Cardapio.where(data: Time.now, cancelado: "\x00").to_a
+  cardapios = Cardapio.where(data: hoje, cancelado: "\x00").to_a
   if(cardapios.empty?)
     sender = EmailSender.new
     t = TemplatesEmails.new
@@ -28,8 +29,8 @@ task :pedir_almoco do
       if(ag.pedir_hj?)
         if(!colaboradores.include?(ag.colaborador))
           pedido = Pedido.new
-          pedido.data = amanha
-          pedido.dataCadastro = Time.now
+          pedido.data = hoje
+          pedido.dataCadastro = hoje
           pedido.colaborador = ag.colaborador
           pedido.opcao1 = cardapio.carnes.first
           pedido.opcao2 = cardapio.carnes.second
