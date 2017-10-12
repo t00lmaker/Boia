@@ -2,7 +2,8 @@
 
 Essa aplicação será a salvação para mentes esquecidas. Implementada para ser uma
 ferramenta interna para agendamento de pedidos de almoço, pedi o almoco do colaborador conforme
-as configurações: diariamente ou dias especificos da semana. 
+as configurações: diariamente ou dias especificos da semana. Depois que o pedido é realizado o
+colaborador recebe um email listando as opções do cardápio que foram pedidas.
 Conecta diretamente a base do Jbroca, uma outra ferramenta interna da Infoway para pedido de almoço. 
 
 ## O você pode encotrar nesse Projeto
