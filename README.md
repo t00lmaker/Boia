@@ -6,7 +6,7 @@ as configurações: diariamente ou dias especificos da semana. Depois que o pedi
 colaborador recebe um email listando as opções do cardápio que foram pedidas.
 Conecta diretamente a base do Jbroca, uma outra ferramenta interna da Infoway para pedido de almoço. 
 
-## O você pode encotrar nesse Projeto
+## O que você pode encotrar nesse projeto?
 
 * Uma aplicação utilizando o micro framwork [Sinatra](www.sinatrarb.com/)
 * Aplicação que agenda tasks no servidor para envio de emails.
