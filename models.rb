@@ -50,6 +50,8 @@ class Pedido < ActiveRecord::Base
    belongs_to :opcao2, :class_name => Opcao, :foreign_key => 'carne2', :primary_key => 'id'
    belongs_to :arroz,  :class_name => Opcao, :foreign_key => 'arroz',  :primary_key => 'id'
    belongs_to :salada, :class_name => Opcao, :foreign_key => 'salada', :primary_key => 'id'
+   belongs_to :cardapio, :class_name => Cardapio, :foreign_key => 'idCardapio', :primary_key => 'idCardapio'
+
 end
 
 class Agendamento < ActiveRecord::Base

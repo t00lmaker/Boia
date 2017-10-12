@@ -36,6 +36,7 @@ task :pedir_almoco do
           pedido.opcao2 = cardapio.carnes.second
           pedido.arroz = cardapio.arroz.first
           pedido.salada = cardapio.salada.first
+          pedido.idCardapio = cardapio.idCardapio
           pedido.save
           pedidoEfetuado = AgendamentoEfetuado.new
           pedidoEfetuado.pedido = pedido
@@ -53,10 +54,10 @@ task :enviar_email do
   agendamentos = AgendamentoEfetuado.includes(:pedido).where(notificado: false).to_a
   agendamentos.each do |a|
     p = Pedido.find(a.idPedido)
-    sender.send(p.colaborador.usuario.email, 'Boia - Pedido de Almoço', t.notificacao_pedido(p))
+    #sender.send(p.colaborador.usuario.email, 'Boia - Pedido de Almoço', t.notificacao_pedido(p))
     a.data_notificacao = Time.now
     a.notificado = true
-    a.save
+    #a.save
   end
 
 end
