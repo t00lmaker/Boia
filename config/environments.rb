@@ -2,11 +2,11 @@ require "sinatra/activerecord"
 
 #configure :production do
   ActiveRecord::Base.establish_connection(
-  :adapter  => "mysql2",
-  :host     => "10.0.0.16",
-  :username => "jbroca",
-  :password => "jbroca!@#1nf0",
-  :database => "jbroca"
+  :adapter  => 
+  :host     => 
+  :username => 
+  :password => 
+  :database => 
 )
 #end
 
