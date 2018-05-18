@@ -10,3 +10,4 @@ gem 'whenever', :require => false
 gem 'pony'
 gem 'sinatra-flash'
 gem 'byebug'
+gem 'rack-protection' ~> 1.5.5
